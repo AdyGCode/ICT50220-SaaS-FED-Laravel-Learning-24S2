@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StateController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/states', StateController::class)
+    ->only(['index',]);
+
+Route::resource('/countries', CountryController::class)
     ->only(['index',]);
 
 require __DIR__.'/auth.php';
