@@ -38,7 +38,8 @@ class StateController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $state = State::whereId($id)->with('country')->get();
+        return view('states.show', compact(['state',]));
     }
 
     /**

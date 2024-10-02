@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/states', StateController::class)
-    ->only(['index',]);
+    ->only(['index', 'show',]);
 
 Route::resource('/countries', CountryController::class)
     ->only(['index',]);
