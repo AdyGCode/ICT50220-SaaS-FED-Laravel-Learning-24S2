@@ -6,8 +6,6 @@
         <form action="{{ route('states.store') }}"
               method="POST">
 
-            @csrf
-
             <section class="flex flex-col gap-2  w-full ">
 
                 <div class="mt-4">
@@ -18,17 +16,56 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-input-label for="code" :value="__('Code')"/>
-                    <x-text-input id="code" class="block mt-1 w-full" type="text" name="code"
-                                  :value="old('code')" required autocomplete="code"/>
-                    <x-input-error :messages="$errors->get('code')" class="mt-2"/>
+                    <x-input-label for="state_code" :value="__('State Code')"/>
+                    <x-text-input id="state_code" class="block mt-1 w-full" type="text" name="state_code"
+                                  :value="old('state_code')" required autocomplete="state_code"/>
+                    <x-input-error :messages="$errors->get('state_code')" class="mt-2"/>
                 </div>
 
                 <div class="mt-4">
-                    <x-input-label for="country" :value="__('Country')"/>
+                    <x-input-label for="type" :value="__('Type')"/>
 
-                    <select name="country_id" id="country" required
-                            class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+                    <select name="type" id="type"
+                            class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                            rounded-md shadow-sm block mt-1 w-full p-2'>
+                        <option value="" disabled
+                                @if(!old('type'))
+                                    selected
+                            @endif
+                        >Select a State Type...
+                        </option>
+                        @foreach($stateTypes as $stateType)
+                            <option value="{{$stateType->type}}"
+                                    @if((old('type') ) == $stateType->type)
+                                        selected
+                                @endif
+                            >{{$stateType->type}}</option>
+                        @endforeach
+                    </select>
+
+                    <x-input-error :messages="$errors->get('type')" class="mt-2"/>
+                </div>
+
+                <div class="mt-4">
+                    <x-input-label for="latitude" :value="__('Latitude')"/>
+                    <x-text-input id="latitude" class="block mt-1 w-full" type="text" name="latitude"
+                                  :value="old('latitude')" required autocomplete="latitude"/>
+                    <x-input-error :messages="$errors->get('latitude')" class="mt-2"/>
+                </div>
+
+                <div class="mt-4">
+                    <x-input-label for="longitude" :value="__('Longitude')"/>
+                    <x-text-input id="longitude" class="block mt-1 w-full" type="text" name="longitude"
+                                  :value="old('longitude')" required autocomplete="longitude"/>
+                    <x-input-error :messages="$errors->get('longitude')" class="mt-2"/>
+                </div>
+
+                <div class="mt-4">
+                    <x-input-label for="country_id" :value="__('Country')"/>
+
+                    <select name="country_id" id="country_id" required
+                            class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                            rounded-md shadow-sm block mt-1 w-full p-2'>
 
                         <option value="" disabled
                                 @if(!old('country_id'))
@@ -49,6 +86,8 @@
                 </div>
 
                 <footer class="col-span-full flex flex-row gap-2 mt-4">
+                    @csrf
+
                     <x-primary-button type="submit">Save</x-primary-button>
 
                     <a href="{{ route('states.index') }}"
@@ -64,6 +103,7 @@
                     </a>
                 </footer>
             </section>
+
         </form>
 
     </article>

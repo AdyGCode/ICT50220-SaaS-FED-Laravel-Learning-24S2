@@ -23,8 +23,10 @@ class StateController extends Controller
      */
     public function create()
     {
-        $countries = Country::all(['id','name']);
-        return view('states.create', compact(['countries']));
+        $countries = Country::all(['id', 'name']);
+        $stateTypes = State::groupBy('type')->orderBy('name')->get(['type']);
+
+        return view('states.create', compact(['countries', 'stateTypes',]));
     }
 
     /**
@@ -33,19 +35,12 @@ class StateController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'=>[
-                'required',
-                'min:5',
-                'max:64'
-            ],
-            'code'=>[
-                'required',
-                'max:5'
-            ],
-            'country_id'=>[
-                'required',
-                'integer'
-            ],
+            'name' => ['required', 'min:5', 'max:64',],
+            'state_code' => ['required', 'max:5',],
+            'country_id' => ['required', 'integer',],
+            'type' => ['sometimes', 'nullable', 'string',],
+            'latitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
+            'longitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
         ]);
 
         State::create($validated);
@@ -69,12 +64,13 @@ class StateController extends Controller
      */
     public function edit(string $id)
     {
-        $countries = Country::all(['id','name']);
+        $countries = Country::all(['id', 'name']);
+        $stateTypes = State::groupBy('type')->orderBy('name')->get(['type']);
 
         $state = State::whereId($id)->get();
         $state = $state[0];
 
-        return view('states.edit', compact(['state','countries']));
+        return view('states.edit', compact(['state', 'countries', 'stateTypes',]));
     }
 
     /**
@@ -83,19 +79,12 @@ class StateController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'name'=>[
-                'required',
-                'min:5',
-                'max:64'
-            ],
-            'code'=>[
-                'required',
-                'max:5'
-            ],
-            'country_id'=>[
-                'required',
-                'integer'
-            ],
+            'name' => ['required', 'min:5', 'max:64',],
+            'state_code' => ['required', 'max:5',],
+            'country_id' => ['required', 'integer',],
+            'type' => ['sometimes', 'nullable', 'string',],
+            'latitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
+            'longitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
         ]);
 
         $state = State::whereId($id)->update($validated);
