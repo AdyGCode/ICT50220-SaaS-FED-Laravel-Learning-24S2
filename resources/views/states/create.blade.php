@@ -46,6 +46,7 @@
 
                 <footer class="col-span-full flex flex-row gap-2">
                     <x-primary-button type="submit">Save</x-primary-button>
+
                     <a href="{{ route('states.index') }}"
                        class="bg-zinc-500 hover:bg-zinc-100
                            text-zinc-50 hover:text-zinc-500

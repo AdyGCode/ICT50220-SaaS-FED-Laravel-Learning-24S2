@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 //});
 
 Route::resource('/countries', CountryController::class)
-    ->only(['index',]);
+//    ->only(['index',]);
+;
 
 require __DIR__.'/auth.php';
