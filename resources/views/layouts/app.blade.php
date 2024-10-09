@@ -28,7 +28,7 @@
             @endisset
 
             <!-- Page Content -->
-            <main>
+            <main class="container mx-auto my-8 bg-white sm:rounded-lg shadow overflow-hidden p-8">
                 {{ $slot }}
             </main>
         </div>
