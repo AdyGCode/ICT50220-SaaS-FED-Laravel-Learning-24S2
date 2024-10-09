@@ -26,17 +26,17 @@
         </a>
     </div>
 
-<x-flash-message :messages="session('success')"
-                 class="bg-green-100 text-green-800 border-green-500"/>
+    <x-flash-message :messages="session('success')"
+                     class="bg-green-100 text-green-800 border-green-500"/>
 
-<x-flash-message :messages="session('danger')"
-                 class="bg-red-100 text-red-800 border-red-500"/>
+    <x-flash-message :messages="session('danger')"
+                     class="bg-red-100 text-red-800 border-red-500"/>
 
-<x-flash-message :messages="session('info')"
-                 class="bg-sky-100 text-sky-800 border-sky-500"/>
+    <x-flash-message :messages="session('info')"
+                     class="bg-sky-100 text-sky-800 border-sky-500"/>
 
-<x-flash-message :messages="session('warning')"
-                 class="bg-amber-100 text-amber-800 border-amber-500"/>
+    <x-flash-message :messages="session('warning')"
+                     class="bg-amber-100 text-amber-800 border-amber-500"/>
 
 
     <div class="w-full mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
