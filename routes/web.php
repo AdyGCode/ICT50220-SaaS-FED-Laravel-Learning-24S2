@@ -19,8 +19,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('/states', StateController::class)
-    ->only(['index', 'show',]);
+//Route::middleware('auth')->group(function () {
+    Route::resource('/states', StateController::class);
+//    ->only(['index', 'show', 'create', 'store', 'edit', 'update']);
+//    ->except(['delete']);
+
+//});
 
 Route::resource('/countries', CountryController::class)
     ->only(['index',]);

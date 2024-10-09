@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\State;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class StateController extends Controller
      */
     public function create()
     {
-        //
+        $countries = Country::all(['id','name']);
+        return view('states.create', compact(['countries']));
     }
 
     /**
@@ -30,7 +32,26 @@ class StateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name'=>[
+                'required',
+                'min:5',
+                'max:64'
+            ],
+            'code'=>[
+                'required',
+                'max:5'
+            ],
+            'country_id'=>[
+                'required',
+                'integer'
+            ],
+        ]);
+
+        State::create($validated);
+
+        return redirect(route('states.index'));
+
     }
 
     /**
@@ -47,7 +68,10 @@ class StateController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $countries = Country::all(['id','name']);
+        $state = State::whereId($id)->get();
+        $state = $state[0];
+        return view('states.edit', compact(['state','countries']));
     }
 
     /**
@@ -55,7 +79,25 @@ class StateController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'name'=>[
+                'required',
+                'min:5',
+                'max:64'
+            ],
+            'code'=>[
+                'required',
+                'max:5'
+            ],
+            'country_id'=>[
+                'required',
+                'integer'
+            ],
+        ]);
+
+        $state = State::whereId($id)->update($validated);
+
+        return redirect(route('states.show', $id));
     }
 
     /**
@@ -63,6 +105,8 @@ class StateController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        State::whereId($id)->delete();
+        return redirect(route('states.index', $id));
+
     }
 }
