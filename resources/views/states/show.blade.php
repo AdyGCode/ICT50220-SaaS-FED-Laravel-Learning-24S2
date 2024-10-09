@@ -6,18 +6,18 @@
         <section>
         <dl class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-10  w-full ">
             @foreach($state as $s)
-                <p>ID</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->id }}</p>
-                <p>Name</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->name }}</p>
-                <p>Code</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->code }}</p>
-                <p>Country</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->country->name ?? '-?-'}}</p>
-                <p>Created</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->created_at }}</p>
-                <p>Updated</p>
-                <p class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->updated_at }}</p>
+                <dt class="font-semibold">ID</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->id }}</dd>
+                <dt class="font-semibold">Name</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->name }}</dd>
+                <dt class="font-semibold">Code</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->state_code }}</dd>
+                <dt class="font-semibold">Country</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->country->name ?? '-?-'}}</dd>
+                <dt class="font-semibold">Created</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->created_at }}</dd>
+                <dt class="font-semibold">Updated</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->updated_at }}</dd>
             @endforeach
         </dl>
             <footer class="col-span-full flex flex-row gap-2 mt-4">

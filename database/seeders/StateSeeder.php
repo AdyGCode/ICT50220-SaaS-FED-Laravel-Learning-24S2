@@ -11,28 +11,28 @@ class StateSeeder extends Seeder
 {
     /**
      * Run the database seeds.
+     *
+     * Data from: https://github.com/dr5hn/countries-states-cities-database
      */
     public function run(): void
     {
-        $states = [
-            [
-                'name' => 'Western Australia',
-                'code' => 'WA',
-                'country'=>"Australia",
-            ],
 
-        ];
+        $table = 'states';
+        $file = public_path("/seeders/$table".".csv");
 
-        foreach ($states as $state) {
-            $country = Country::where('name','=',$state['country'])->get()??null;
-            unset($state['country']);
-            if (! is_null($country[0])) {
-                $state['country_id'] = $country[0]->id;
-            }
-            State::create($state);
+
+        // store returned data into array of records
+        $records = import_CSV($file);
+
+        $numRecords = count($records);
+        $this->command->getOutput()->progressStart($numRecords);
+
+        // add each record to the posts table in DB
+        foreach ($records as $key => $record) {
+            State::create($record);
+            $this->command->getOutput()->progressAdvance();
         }
-
-        State::factory(100)->create();
+        $this->command->getOutput()->progressFinish();
 
     }
 }

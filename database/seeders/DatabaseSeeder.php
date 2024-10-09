@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,17 +15,34 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
-//        ]);
+        function import_CSV($filename, $delimiter = ','){
+            if(!file_exists($filename) || !is_readable($filename))
+                return false;
+            $header = null;
+            $data = array();
+            if (($handle = fopen($filename, 'r')) !== false){
+                while (($row = fgetcsv($handle, 1000, $delimiter)) !== false){
+                    if(!$header)
+                        $header = $row;
+                    else
+                        $data[] = array_combine($header, $row);
+                }
+                fclose($handle);
+            }
+            return $data;
+        }
+
 
         $this->call([
+            UserSeeder::class,
+
             CountrySeeder::class,
+
             StateSeeder::class,
 
+            CategorySeeder::class,
         ]);
+
     }
 }

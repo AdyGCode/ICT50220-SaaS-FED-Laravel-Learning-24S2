@@ -14,8 +14,13 @@ class State extends Model
 
     protected $fillable = [
         'name',
-        'code',
         'country_id',
+        'state_code',
+        'country_name',
+        'country_code',
+        'type',
+        'latitude',
+        'longitude',
     ];
 
     /**

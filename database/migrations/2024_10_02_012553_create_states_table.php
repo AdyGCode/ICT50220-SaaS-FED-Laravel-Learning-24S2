@@ -14,8 +14,14 @@ return new class extends Migration
         Schema::create('states', function (Blueprint $table) {
             $table->id(); // Big Integer, Unsigned, Primary Key, Auto Increment
             $table->string('name', 64);
-            $table->string('code', 5);
+            $table->string('state_code', 5);
+            $table->string('country_name')->nullable();
+            $table->string("country_code",3)->nullable();
+            $table->string('type')->nullable();
+            $table->float('latitude')->nullable();
+            $table->float('longitude')->nullable();
             $table->timestamps(); // created_at, updated_at - date time
+
         });
     }
 

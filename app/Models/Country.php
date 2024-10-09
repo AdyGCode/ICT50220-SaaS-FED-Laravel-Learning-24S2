@@ -10,12 +10,28 @@ class Country extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'name',
         'iso3',
         'iso2',
         'tld',
-        'dial_code'
+        'phone_code',
+        'numeric_code',
+        'capital',
+        'currency',
+        'currency_name',
+        'currency_symbol',
+        'native',
+        'region',
+        'region_id',
+        'subregion',
+        'subregion_id',
+        'nationality',
+        'timezones',
+        'latitude',
+        'longitude',
+        'emoji',
+        'emojiU',
     ];
 
     /**
