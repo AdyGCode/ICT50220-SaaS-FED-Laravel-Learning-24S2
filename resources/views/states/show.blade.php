@@ -1,10 +1,15 @@
 <x-guest-layout>
 
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('States') }}
+        </h2>
+    </x-slot>
+
     <article class="w-full">
-        <h1 class="text-2xl">States</h1>
 
         <section>
-        <dl class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-10  w-full ">
+        <dl class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-10 gap-2 w-full ">
             @foreach($state as $s)
                 <dt class="font-semibold">ID</dt>
                 <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->id }}</dd>
@@ -12,6 +17,10 @@
                 <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->name }}</dd>
                 <dt class="font-semibold">Code</dt>
                 <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->state_code }}</dd>
+                <dt class="font-semibold">Type</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->type ?? '-'}}</dd>
+                <dt class="font-semibold">Co-Ordinates</dt>
+                <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->latitude ?? '-'}}, {{ $s->longitude ?? '-'}}</dd>
                 <dt class="font-semibold">Country</dt>
                 <dd class="col-span-1 sm:col-span-2 md:col-span-9">{{ $s->country->name ?? '-?-'}}</dd>
                 <dt class="font-semibold">Created</dt>

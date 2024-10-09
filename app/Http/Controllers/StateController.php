@@ -13,7 +13,7 @@ class StateController extends Controller
      */
     public function index()
     {
-        $states = State::paginate(5);
+        $states = State::orderBy('name')->paginate(10);
 
         return view('states.index', compact(['states']));
     }
