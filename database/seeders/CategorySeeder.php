@@ -17,75 +17,75 @@ class CategorySeeder extends Seeder
         $records = [
             [
                 'id' => 100,
-                'name' => 'PHP',
+                'name' => 'Food',
                 'description' => null,
                 'category_id' => 0,
             ],
             [
                 'id' => 101,
-                'name' => 'Framework',
+                'name' => 'Vegetables',
                 'description' => null,
                 'category_id' => 100,
             ],
             [
                 'id' => 102,
-                'name' => 'Update',
+                'name' => 'Meat & Poultry',
                 'description' => null,
                 'category_id' => 100,
             ],
 
 
             [
-                'name' => 'Laravel',
+                'name' => 'Carrots',
                 'description' => null,
                 'category_id' => 101,
             ],
             [
-                'name' => 'Symfony',
+                'name' => 'Potatoes',
                 'description' => null,
                 'category_id' => 101,
             ],
             [
-                'name' => 'Yii',
+                'name' => 'Sweetcorn',
                 'description' => null,
                 'category_id' => 101,
             ],
 
             [
                 'id' => 200,
-                'name' => 'C',
+                'name' => 'Hardware',
                 'description' => null,
                 'category_id' => 0,
             ],
 
             [
                 'id' => 300,
-                'name' => 'Python',
+                'name' => 'Clothes',
                 'description' => null,
                 'category_id' => 0,
             ],
 
             [
                 'id' => 400,
-                'name' => 'JavaScript',
+                'name' => 'Cleaning',
                 'description' => null,
                 'category_id' => 0,
             ],
             [
                 'id' => 401,
-                'name' => 'Frameworks',
+                'name' => 'Bleach',
                 'description' => null,
                 'category_id' => 400,
             ],
             [
                 'id' => 402,
-                'name' => 'React',
+                'name' => 'Washing up liquid',
                 'description' => null,
                 'category_id' => 401,
             ],
             [
                 'id' => 403,
-                'name' => 'Vue',
+                'name' => 'Laundry detergent',
                 'description' => null,
                 'category_id' => 401,
             ],
