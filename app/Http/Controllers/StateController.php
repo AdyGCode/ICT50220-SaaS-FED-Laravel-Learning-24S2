@@ -50,7 +50,8 @@ class StateController extends Controller
 
         State::create($validated);
 
-        return redirect(route('states.index'));
+        return redirect(route('states.index'))
+            ->with('success', 'State successfully created!');
 
     }
 
@@ -69,8 +70,10 @@ class StateController extends Controller
     public function edit(string $id)
     {
         $countries = Country::all(['id','name']);
+
         $state = State::whereId($id)->get();
         $state = $state[0];
+
         return view('states.edit', compact(['state','countries']));
     }
 
@@ -97,7 +100,8 @@ class StateController extends Controller
 
         $state = State::whereId($id)->update($validated);
 
-        return redirect(route('states.show', $id));
+        return redirect(route('states.show', $id))
+            ->with('success', 'State successfully updated!');
     }
 
     /**
@@ -106,7 +110,8 @@ class StateController extends Controller
     public function destroy(string $id)
     {
         State::whereId($id)->delete();
-        return redirect(route('states.index', $id));
+        return redirect(route('states.index', $id))
+            ->with('success', 'State successfully deleted!');
 
     }
 }

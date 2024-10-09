@@ -13,8 +13,10 @@
 
                 <div class="mt-4">
                     <x-input-label for="name" :value="__('Name')"/>
-                    <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
-                                  :value="old('name') ?? $state->name" required autocomplete="name"/>
+                    <x-text-input id="name" class="block mt-1 w-full" type="text"
+                                  name="name"
+                                  :value="old('name') ?? $state->name" required
+                                  autocomplete="name"/>
                     <x-input-error :messages="$errors->get('name')" class="mt-2"/>
                 </div>
 
@@ -28,15 +30,18 @@
                 <div class="mt-4">
                     <x-input-label for="country" :value="__('Country')"/>
 
-                    <select name="country_id" id="country" required>
+                    <select name="country_id" id="country"
+                            class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
+                            rounded-md shadow-sm block mt-1 w-full p-2'>
                         <option value="" disabled
-                            @if(!old('country_id') || !$state->country_id)
+                                @if(!old('country_id') || !$state->country_id)
                                     selected
                             @endif
-                        >Select a country...</option>
+                        >Select a country...
+                        </option>
                         @foreach($countries as $country)
                             <option value="{{$country->id}}"
-                                @if((old('country_id') ?? $state->country_id) == $country->id)
+                                    @if((old('country_id') ?? $state->country_id) == $country->id)
                                         selected
                                 @endif
                             >{{$country->name}}</option>
@@ -45,8 +50,9 @@
                     <x-input-error :messages="$errors->get('country_id')" class="mt-2"/>
                 </div>
 
-                <footer class="col-span-full flex flex-row gap-2">
+                <footer class="col-span-full flex flex-row gap-2 mt-4">
                     <x-primary-button type="submit">Save</x-primary-button>
+
                     <a href="{{ route('states.index') }}"
                        class="inline-flex items-center
                    px-4 py-2
@@ -56,7 +62,7 @@
                    rounded-md
                    font-semibold text-xs text-gray-100 hover:text-gray-700
                    uppercase tracking-widest shadow-sm disabled:opacity-25 transition ease-in-out duration-500">
-                        {{ __('Back') }}
+                        {{ __('Back to List') }}
                     </a>
                 </footer>
             </section>

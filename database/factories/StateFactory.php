@@ -19,6 +19,7 @@ class StateFactory extends Factory
         return [
             'name' => fake('en_AU')->words(2,true),
             'code' => fake('en_AU')->text(5),
+            'country_id'=> fake('en_AU')->numberBetween(0,100),
         ];
     }
 }

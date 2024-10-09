@@ -27,16 +27,20 @@
                 <div class="mt-4">
                     <x-input-label for="country" :value="__('Country')"/>
 
-                    <select name="country_id" id="country" required>
+                    <select name="country_id" id="country" required
+                            class="w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
+
                         <option value="" disabled
-                            @if(!old('country_id'))
+                                @if(!old('country_id'))
                                     selected
                             @endif
-                        >Select a country...</option>
+                        >Select a country...
+                        </option>
+
                         @foreach($countries as $country)
                             <option value="{{$country->id}}"
                                 @if(old('country_id') == $country->id)
-                                        selected
+                                    selected
                                 @endif
                             >{{$country->name}}</option>
                         @endforeach
@@ -44,17 +48,19 @@
                     <x-input-error :messages="$errors->get('country_id')" class="mt-2"/>
                 </div>
 
-                <footer class="col-span-full flex flex-row gap-2">
+                <footer class="col-span-full flex flex-row gap-2 mt-4">
                     <x-primary-button type="submit">Save</x-primary-button>
 
                     <a href="{{ route('states.index') }}"
-                       class="bg-zinc-500 hover:bg-zinc-100
-                           text-zinc-50 hover:text-zinc-500
-                           border border-zinc-500
-                           rounded
-                           p-1 px-2
-                           transition duration-500">
-                        {{ __('Back') }}
+                       class="inline-flex items-center
+                              px-4 py-2
+                              bg-gray-700 hover:bg-gray-50
+                              border border-gray-300
+                              focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+                              rounded-md
+                              font-semibold text-xs text-gray-100 hover:text-gray-700
+                              uppercase tracking-widest shadow-sm disabled:opacity-25 transition ease-in-out duration-500">
+                        {{ __('Back to List') }}
                     </a>
                 </footer>
             </section>
