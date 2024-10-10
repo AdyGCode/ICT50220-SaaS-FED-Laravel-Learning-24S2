@@ -39,8 +39,8 @@ class StateController extends Controller
             'state_code' => ['required', 'max:5',],
             'country_id' => ['required', 'integer',],
             'type' => ['sometimes', 'nullable', 'string',],
-            'latitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
-            'longitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
+            'latitude' => ['sometimes', 'nullable', 'numeric', 'min:-180', 'max:180',],
+            'longitude' => ['sometimes', 'nullable', 'numeric', 'min:-180', 'max:180',],
         ]);
 
         State::create($validated);
@@ -83,8 +83,8 @@ class StateController extends Controller
             'state_code' => ['required', 'max:5',],
             'country_id' => ['required', 'integer',],
             'type' => ['sometimes', 'nullable', 'string',],
-            'latitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
-            'longitude' => ['sometimes', 'nullable', 'float', 'min:-180', 'max:180',],
+            'latitude' => ['sometimes', 'nullable', 'numeric', 'min:-180', 'max:180',],
+            'longitude' => ['sometimes', 'nullable', 'numeric', 'min:-180', 'max:180',],
         ]);
 
         $state = State::whereId($id)->update($validated);
