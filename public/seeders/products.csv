@@ -1,0 +1,79 @@
+id,name,description,recommended_price,available,stock_level,reorder_level,category_id
+1,"Red Apple","Sweet and juicy red apples",1.50,"true",100,20,111
+2,"Green Apple","Crisp and tart green apples",1.50,"true",150,30,111
+3,"Carrot","Crunchy and nutritious carrots",0.50,"true",200,40,121
+4,"Broccoli","Fresh and green broccoli",1.00,"true",120,25,120
+5,"Banana","Ripe and sweet bananas",0.75,"true",180,35,110
+6,"Full Cream Milk","Rich and creamy full cream milk",2.00,"true",100,20,210
+7,"Skim Milk","Low-fat skim milk",2.00,"true",120,25,210
+8,"Cheddar Cheese","Sharp and flavorful cheddar cheese",3.00,"true",80,15,221
+9,"Brie Cheese","Creamy and soft brie cheese",4.00,"true",50,10,222
+10,"Wholemeal Bread","Healthy and nutritious wholemeal bread",2.50,"true",100,20,311
+11,"White Bread","Soft and fresh white bread",2.00,"true",150,30,310
+12,"Croissant","Buttery and flaky croissants",1.50,"true",80,15,321
+13,"Beef Steak","Juicy and tender beef steak",10.00,"true",50,10,411
+14,"Salmon Fillet","Fresh and flavorful salmon fillet",8.00,"true",40,8,421
+15,"Chicken Breast","Lean and tender chicken breast",6.00,"true",100,20,400
+16,"Cola","Classic cola drink",1.00,"true",200,40,511
+17,"Orange Juice","Fresh and tangy orange juice",2.00,"true",150,30,521
+18,"Lemonade","Refreshing lemonade",1.50,"true",180,35,510
+19,"Apple Juice","Natural and sweet apple juice",2.00,"true",120,25,520
+20,"Strawberry","Sweet and juicy strawberries",2.50,"true",100,20,110
+21,"Cucumber","Crisp and refreshing cucumbers",1.00,"true",150,30,120
+22,"Tomato","Ripe and juicy tomatoes",1.50,"true",200,40,120
+23,"Pineapple","Sweet and tropical pineapple",3.00,"true",80,15,110
+24,"Lettuce","Fresh and crisp lettuce",1.00,"true",120,25,120
+25,"Grapes","Sweet and juicy grapes",2.00,"true",100,20,110
+26,"Yogurt","Creamy and delicious yogurt",1.50,"true",150,30,200
+27,"Butter","Rich and creamy butter",2.00,"true",200,40,200
+28,"Mozzarella Cheese","Soft and melty mozzarella cheese",3.50,"true",80,15,220
+29,"Cottage Cheese","Creamy and mild cottage cheese",2.50,"true",120,25,220
+30,"Sourdough Bread","Artisanal sourdough bread",3.00,"true",100,20,310
+31,"Bagel","Soft and chewy bagel",1.50,"true",150,30,300
+32,"Muffin","Delicious and moist muffin",2.00,"true",200,40,320
+33,"Pork Chops","Juicy and tender pork chops",7.00,"true",50,10,400
+34,"Tuna","Fresh and flavorful tuna",5.00,"true",40,8,420
+35,"Lamb Chops","Tender and juicy lamb chops",9.00,"true",30,6,400
+36,"Sparkling Water","Refreshing sparkling water",1.00,"true",200,40,500
+37,"Ginger Beer","Spicy and refreshing ginger beer",1.50,"true",150,30,510
+38,"Cranberry Juice","Tart and refreshing cranberry juice",2.00,"true",120,25,520
+39,"Blueberries","Sweet and juicy blueberries",3.00,"true",100,20,110
+40,"Spinach","Fresh and nutritious spinach",1.50,"true",150,30,120
+41,"Avocado","Creamy and ripe avocado",2.00,"true",200,40,120
+42,"Kiwi","Sweet and tangy kiwi",1.00,"true",80,15,110
+43,"Celery","Crisp and refreshing celery",1.50,"true",120,25,120
+44,"Mango","Sweet and juicy mango",2.50,"true",100,20,110
+45,"Cream","Rich and creamy cream",2.00,"true",150,30,200
+46,"Ice Cream","Creamy and delicious ice cream",3.00,"true",200,40,200
+47,"Feta Cheese","Crumbly and tangy feta cheese",3.50,"true",80,15,220
+48,"Ricotta Cheese","Creamy and mild ricotta cheese",2.50,"true",120,25,220
+49,"Ciabatta Bread","Crispy and chewy ciabatta bread",2.00,"true",100,20,310
+50,"Donut","Sweet and delicious donut",1.50,"true",150,30,320
+51,"Cinnamon Roll","Sweet and gooey cinnamon roll",2.00,"true",200,40,320
+52,"Beef Mince","Lean and versatile beef mince",6.00,"true",50,10,410
+53,"Cod Fillet","Fresh and flaky cod fillet",7.00,"true",40,8,420
+54,"Veal Cutlets","Tender and juicy veal cutlets",8.00,"true",30,6,400
+55,"Energy Drink","Energizing and refreshing energy drink",2.00,"true",200,40,510
+56,"Pomegranate Juice","Tart and refreshing pomegranate juice",2.50,"true",150,30,520
+57,"Raspberries","Sweet and juicy raspberries",3.00,"true",100,20,110
+58,"Zucchini","Fresh and crisp zucchini",1.00,"true",150,30,120
+59,"Potato","Fresh and starchy potato",1.50,"true",200,40,120
+60,"Peach","Sweet and juicy peach",2.00,"true",80,15,110
+61,"Asparagus","Fresh and crisp asparagus",2.50,"true",120,25,120
+62,"Yogurt Drink","Creamy and refreshing yogurt drink",1.50,"true",100,20,200
+63,"Sour Cream","Rich and creamy sour cream",2.00,"true",150,30,200
+64,"Gouda Cheese","Smooth and nutty gouda cheese",3.50,"true",80,15,220
+65,"Cream Cheese","Creamy and mild cream cheese",2.50,"true",120,25,220
+66,"Baguette","Crispy and chewy baguette",2.00,"true",100,20,310
+67,"Eclair","Sweet and creamy eclair",1.50,"true",150,30,320
+68,"Danish Pastry","Sweet and flaky danish pastry",2.00,"true",200,40,320
+69,"Beef Ribs","Juicy and tender beef ribs",8.00,"true",50,10,410
+70,"Haddock Fillet","Fresh and flaky haddock fillet",7.00,"true",40,8,420
+71,"Turkey Breast","Lean and tender turkey breast",7.50,"true",30,6,400
+72,"Sports Drink","Refreshing and energizing sports drink",1.50,"true",200,40,510
+73,"Pineapple Juice","Sweet and tropical pineapple juice",2.00,"true",150,30,520
+74,"Blackberries","Sweet and juicy blackberries",3.00,"true",100,20,110
+75,"Eggplant","Fresh and firm eggplant",1.50,"true",150,30,120
+76,"Sweet Potato","Sweet and starchy sweet potato",2.00,"true",200,40,120
+77,"Plum","Sweet and juicy plum",1.00,"true",80,15,110
+78,"Green Beans","Fresh and crisp green beans",1.50,"true",120,25,120

@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 128);
             $table->text('description')->nullable();
-            $table->string('recommended_price')->integer()->nullable();
+            $table->unsignedInteger('recommended_price')->nullable();
+            $table->boolean('available')->nullable();
+            $table->unsignedInteger("stock_level")->default(0);
+            $table->unsignedInteger("reorder_level")->nullable()->default(null);
             $table->unsignedInteger('category_id')->default(0);
             $table->timestamps();
         });
