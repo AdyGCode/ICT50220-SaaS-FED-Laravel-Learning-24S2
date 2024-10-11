@@ -1,0 +1,34 @@
+name,description,slug,id,category_id
+"Fresh Produce","Fresh fruits and vegetables","fresh-produce",100,0
+"Fruits","A variety of fresh fruits","fresh-produce-fruits",110,100
+"Vegetables","A variety of fresh vegetables","fresh-produce-vegetables",120,100
+"Apples","Sweet and crispy apples","fresh-produce-fruits-apples",111,110
+"Carrots","Crunchy and nutritious carrots","fresh-produce-vegetables-carrots",121,120
+"Dairy","Dairy products including milk and cheese","dairy",200,0
+"Milk","Fresh milk in various types","dairy-milk",210,200
+"Cheese","A selection of delicious cheeses","dairy-cheese",220,200
+"Cheddar","Sharp and flavorful cheddar cheese","dairy-cheese-cheddar",221,220
+"Brie","Creamy and soft brie cheese","dairy-cheese-brie",222,220
+"Bakery","Freshly baked goods","bakery",300,0
+"Bread","A variety of fresh bread","bakery-bread",310,300
+"Pastries","Delicious pastries and sweets","bakery-pastries",320,300
+"Wholemeal","Healthy wholemeal bread","bakery-bread-wholemeal",311,310
+"Croissants","Buttery and flaky croissants","bakery-pastries-croissants",321,320
+"Meat & Seafood","Fresh meat and seafood","meat-seafood",400,0
+"Beef","High-quality beef products","meat-seafood-beef",410,400
+"Fish","Fresh and delicious fish","meat-seafood-fish",420,400
+"Steak","Juicy and tender beef steak","meat-seafood-beef-steak",411,410
+"Salmon","Fresh and flavorful salmon","meat-seafood-fish-salmon",421,420
+"Beverages","A variety of beverages","beverages",500,0
+"Soft Drinks","Refreshing soft drinks","beverages-soft-drinks",510,500
+"Juices","Natural and delicious fruit juices","beverages-juices",520,500
+"Cola","Classic cola drink","beverages-soft-drinks-cola",511,510
+"Orange Juice","Fresh and tangy orange juice","beverages-orange-juice",521,520
+"Tea & Coffee",,"tea-and-coffee",530,500
+"Tea",,"beverages-tea",532,530
+"Earl Grey",,"beverages-tea-earl-grey",536,532
+"Lady Grey",,"beverages-tea-lady-grey",537,532
+"Specialist",,"beverages-tea-specialist",538,532
+"English Breakfast",,"beverages-tea-english-breakfast",535,532
+"Coffee",,"beverages-coffee",533,530
+"Tea & Coffee Alternatives",,"beverages-tea-and-coffee-alternatives",531,530

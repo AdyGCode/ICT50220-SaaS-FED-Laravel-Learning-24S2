@@ -16,78 +16,74 @@ class CategorySeeder extends Seeder
 
         $records = [
             [
-                'id' => 100,
-                'name' => 'Food',
-                'description' => null,
-                'category_id' => 0,
+                "name" => "Fresh Produce",
+                "description" => "Fresh fruits and vegetables",
+                "slug" => "fresh-produce",
+                "id" => 100,
+                "category_id" => 0,
             ],
             [
-                'id' => 101,
-                'name' => 'Vegetables',
-                'description' => null,
-                'category_id' => 100,
+                "name" => "Fruits",
+                "description" => "A variety of fresh fruits",
+                "slug" => "fresh-produce-fruits",
+                "id" => 110,
+                "category_id" => 100,
             ],
             [
-                'id' => 102,
-                'name' => 'Meat & Poultry',
-                'description' => null,
-                'category_id' => 100,
-            ],
-
-
-            [
-                'name' => 'Carrots',
-                'description' => null,
-                'category_id' => 101,
+                "name" => "Vegetables",
+                "description" => "A variety of fresh vegetables",
+                "slug" => "fresh-produce-vegetables",
+                "id" => 120,
+                "category_id" => 100,
             ],
             [
-                'name' => 'Potatoes',
-                'description' => null,
-                'category_id' => 101,
+                "name" => "Apples",
+                "description" => "Sweet and crispy apples",
+                "slug" => "fresh-produce-fruits-apples",
+                "id" => 111,
+                "category_id" => 110,
             ],
             [
-                'name' => 'Sweetcorn',
-                'description' => null,
-                'category_id' => 101,
-            ],
-
-            [
-                'id' => 200,
-                'name' => 'Hardware',
-                'description' => null,
-                'category_id' => 0,
-            ],
-
-            [
-                'id' => 300,
-                'name' => 'Clothes',
-                'description' => null,
-                'category_id' => 0,
-            ],
-
-            [
-                'id' => 400,
-                'name' => 'Cleaning',
-                'description' => null,
-                'category_id' => 0,
+                "name" => "Carrots",
+                "description" => "Crunchy and nutritious carrots",
+                "slug" => "fresh-produce-vegetables-carrots",
+                "id" => 121,
+                "category_id" => 120,
             ],
             [
-                'id' => 401,
-                'name' => 'Bleach',
-                'description' => null,
-                'category_id' => 400,
+                "name" => "Dairy",
+                "description" => "Dairy products including milk and cheese",
+                "slug" => "dairy",
+                "id" => 200,
+                "category_id" => 0,
             ],
             [
-                'id' => 402,
-                'name' => 'Washing up liquid',
-                'description' => null,
-                'category_id' => 401,
+                "name" => "Milk",
+                "description" => "Fresh milk in various types",
+                "slug" => "dairy-milk",
+                "id" => 210,
+                "category_id" => 200,
             ],
             [
-                'id' => 403,
-                'name' => 'Laundry detergent',
-                'description' => null,
-                'category_id' => 401,
+                "name" => "Cheese",
+                "description" => "A selection of delicious cheeses",
+                "slug" => "dairy-cheese",
+                "id" => 220,
+                "category_id" => 200,
+            ],
+            [
+                "name" => "Cheddar",
+                "description" => "Sharp and flavorful cheddar cheese",
+                "slug" => "dairy-cheese-cheddar",
+                "id" => 221,
+                "category_id" => 220,
+            ],
+            [
+                "name" => "Brie",
+                "description" => "Creamy and soft brie cheese",
+                "slug" => "dairy-cheese-brie",
+                "id" => 222,
+                "category_id" => 220,
             ],
         ];
 
@@ -100,6 +96,27 @@ class CategorySeeder extends Seeder
             $this->command->getOutput()->progressAdvance();
         }
         $this->command->getOutput()->progressFinish();
+
+
+
+        /* Second part of the categories are coming from a CSV */
+        $table = 'categories';
+        $file = public_path("/seeders/$table" . ".csv");
+
+
+        // store returned data into array of records
+        $records = DatabaseSeeder::import_CSV($file);
+
+        $numRecords = count($records);
+        $this->command->getOutput()->progressStart($numRecords);
+
+        // add each record to the posts table in DB
+        foreach ($records as $key => $record) {
+            Category::firstOrCreate($record);
+            $this->command->getOutput()->progressAdvance();
+        }
+        $this->command->getOutput()->progressFinish();
+
 
     }
 }
