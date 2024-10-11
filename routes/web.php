@@ -17,6 +17,9 @@ Route::get('/dashboard', function () {
 Route::resource('/categories', CategoryController::class)
     ->only(['index']);
 
+Route::resource('/products', ProductController::class)
+    ->only(['index']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
