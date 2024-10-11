@@ -21,7 +21,7 @@ class CountrySeeder extends Seeder
 
 
         // store returned data into array of records
-        $records = import_CSV($file);
+        $records =  DatabaseSeeder::import_CSV($file);
 
         $numRecords = count($records);
         $this->command->getOutput()->progressStart($numRecords);
