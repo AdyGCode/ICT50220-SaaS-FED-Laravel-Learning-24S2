@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             return false;
 
         $header = null;
-        $data = array();
+        $data = array(); // []
 
         if (($handle = fopen($filename, 'r')) !== false) {
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {

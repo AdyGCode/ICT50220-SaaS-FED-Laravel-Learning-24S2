@@ -29,14 +29,14 @@
                             class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500
                             rounded-md shadow-sm block mt-1 w-full p-2'>
                         <option value="" disabled
-                                @if(!old('type'))
+                            @if(!old('type'))
                                     selected
                             @endif
                         >Select a State Type...
                         </option>
                         @foreach($stateTypes as $stateType)
                             <option value="{{$stateType->type}}"
-                                    @if((old('type') ) == $stateType->type)
+                                @if((old('type') ) == $stateType->type)
                                         selected
                                 @endif
                             >{{$stateType->type}}</option>
@@ -76,8 +76,8 @@
 
                         @foreach($countries as $country)
                             <option value="{{$country->id}}"
-                                @if(old('country_id') == $country->id)
-                                    selected
+                                    @if(old('country_id') == $country->id)
+                                        selected
                                 @endif
                             >{{$country->name}}</option>
                         @endforeach
