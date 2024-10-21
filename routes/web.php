@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StateController;
 use Illuminate\Support\Facades\Route;
@@ -10,9 +12,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::resource('posts', PostController::class)
+;
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::resource('/categories', CategoryController::class)
     ->middleware(['auth', 'verified'])
